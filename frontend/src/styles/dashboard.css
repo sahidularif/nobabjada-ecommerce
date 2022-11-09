@@ -47,12 +47,15 @@
   --size-900: 5rem;
   /* --fs-lge-heading: var(--size-900) */
 }
+
 a {
   color: #000000;
 }
+
 li:hover {
   color: white;
 }
+
 .admin-container {
   width: 100%;
   /* padding: 0 30px; */
@@ -62,6 +65,7 @@ li:hover {
   align-items: flex-start;
   justify-content: space-between;
 }
+
 .admin_header {
   background-color: #ffffff;
   display: flex;
@@ -70,14 +74,14 @@ li:hover {
   align-items: center;
   width: 100%;
   height: 60px;
-  
+
 }
 
 .admin_second-nav {
   background-color: #ffffff;
   display: flex;
   /* flex-direction: row; */
-  justify-content:right;
+  justify-content: right;
   align-items: center;
   width: 20%;
   border-bottom: 1px solid gainsboro;
@@ -87,6 +91,7 @@ li:hover {
 .admin_second-nav div {
   margin: 0px 5px;
 }
+
 .admin_search {
   width: 60%;
   padding: 0 20px;
@@ -96,6 +101,7 @@ li:hover {
   height: 60px;
   display: flex;
 }
+
 .admin_search input[type="text"] {
   border-radius: 5px;
   min-width: 100%;
@@ -103,9 +109,11 @@ li:hover {
   border: 1px solid gainsboro;
   /* background-color: whitesmoke; */
 }
+
 .admin-profile img {
   border-radius: 50px;
 }
+
 .admin-profile {
   display: flex;
   align-items: center;
@@ -114,6 +122,7 @@ li:hover {
   align-items: center;
   height: 60px;
 }
+
 .admin_second-nav .dash {
   height: 30px;
   width: 1px;
@@ -126,6 +135,7 @@ li:hover {
   /* padding: 0 20px; */
   justify-content: space-between;
 }
+
 .dashboard_logo {
   /* background-color: white; */
   position: relative;
@@ -135,86 +145,99 @@ li:hover {
   /* margin-left: 10px; */
   width: 20%;
   height: 60px;
-  padding: 15px 15px;
+  padding: 15px 30px;
   border-right: 1px solid gainsboro;
   border-bottom: none;
   /* justify-content: center; */
   align-items: center;
 }
-.mobile_menue {
-  display: none;
-}
+
+
 .search_icon {
   font-size: 30px;
   font-weight: 800;
   display: none;
 }
+
 .dashboard_side_menue {
   width: 20%;
   padding: 20px 20px;
   height: 100vh;
   /* background-color:snow; */
   border-right: 1px solid gainsboro;
-  
- 
+
+
 }
-.toggle_side_menue{
+
+.toggle_side_menue {
   position: absolute;
   width: auto;
   padding: 20px 20px;
-  background-color:#fcfcfc;
+  background-color: #fcfcfc;
   height: 100vh;
   /* background-color:snow; */
   /* border-right: 1px solid gainsboro; */
   z-index: 9;
-   
+
 }
+
 .dashboard_side_menue ul li {
   list-style-type: none;
   /* color:white; */
   margin-bottom: 10px;
   border-radius: 8px;
 }
+
 .toggle_side_menue ul li {
   list-style-type: none;
   /* color:white; */
   margin-bottom: 10px;
   border-radius: 8px;
 }
+
 .dashboard_side_menue ul {
-  padding: 0;  
+  padding: 0;
 }
+
 .toggle_side_menue ul {
-  padding: 0;  
+  padding: 0;
 }
+
 .dashboard_side_menue ul li a {
   display: flex;
   text-decoration: none;
   padding: 10px 20px;
   color: black
 }
+
 .toggle_side_menue ul li a {
   display: flex;
   text-decoration: none;
   padding: 10px 20px;
   color: black
 }
+
 .dashboard_side_menue ul li a span {
   margin-left: 10px;
 }
+
 .toggle_side_menue ul li a span {
   margin-left: 10px;
 }
+
 .dashboard_side_menue ul li a:hover {
   color: #fff;
 }
+
 .toggle_side_menue ul li a:hover {
   color: #fff;
 }
+
 .dashboard_side_menue ul li:hover {
   color: #fff;
   background-color: var(--clr-neutral-100);
 }
+
 .toggle_side_menue ul li:hover {
   color: #fff;
   background-color: var(--clr-neutral-100);
@@ -222,28 +245,82 @@ li:hover {
 
 .dashboard_main {
   width: 80%;
+  padding: 10px 30px;
   justify-content: center;
   margin: 0 auto;
+  height: 100vh;
   background-color: #F5F6FE;
 }
-.products-wrapper{
+.order-items{
+  background-color: white;
+  padding: 10px
+}
+.app-nav-tabs {
+  background-color: #fff;
+  width: 100%;
+}
+.order-list .app-nav-tabs li {
+  width: 25%;
+  display: flex;
+}
+.order-list .app-nav-tabs li:hover {
+  background-color:#fcfcfc;
+}
+.order-list .app-nav-tabs li:focus {
+  background-color:#fcfcfc;
+}
+.order-list .app-nav-tabs li a{
+ color: #5D6779;
+ font-weight: 500;
+ text-decoration: none;
+}
+.order-list .app-nav-tabs li a:hover{
+ color: green;
+ border-bottom: 2px solid goldenrod;
+}
+.order-list .app-nav-tabs li a:focus{
+ color: green;
+ border-bottom: 2px solid goldenrod;
+}
+.app-nav-tabs ul li{
+  min-width: 25%;
+}
+/* Dashboard Table */
+.admin-table thead tr{
+  color: #5D6779;
+  font-weight: 500;
+}
+.admin-table tbody .cell{
+  margin-top: 20px !important;
+}
+.admin-table tbody tr td{
+ color:#5D6779;
+ font-weight: lighter;
+}
+.admin-table tbody tr:hover{
+ background-color: snow;
+}
+.products-wrapper {
   width: 80%;
   /* background-color: #000000; */
   margin: 0 auto;
   justify-content: center;
 }
-.pd-form-wr{
+
+.pd-form-wr {
   width: 60%;
   /* background-color: #000000; */
   margin: 0 auto;
   justify-content: center;
 }
-.pd-table-wr{
+
+.pd-table-wr {
   width: 60%;
   /* background-color: #000000; */
   margin: 0 auto;
   justify-content: center;
 }
+
 @media only screen and (max-width: 769px) {
   .admin_header {
     padding: 10px 0;
@@ -252,18 +329,23 @@ li:hover {
     background-color: #fcfcfc;
     /* box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.2); */
   }
-  .dashboard_main{
+
+  .dashboard_main {
     width: 100%;
   }
+
   .dashboard_logo {
     padding: 0;
   }
+
   .dashboard_logo {
     border: none;
   }
+
   .admin_second-nav div {
     margin: 0px 5px;
   }
+
   .admin_search {
     display: none;
   }
@@ -275,29 +357,41 @@ li:hover {
     height: auto;
     display: none;
   }
+
   .admin_second-nav {
     justify-content: space-between;
   }
+
   .admin_second-nav div {
     margin: 0px 5px;
   }
+
   .search_icon {
     display: block;
     color: #000000;
     font-size: larger;
   }
+
   .dashboard_logo img {
     display: none;
   }
-  .dashboard_logo .mobile_menue {
-    display: block;
-  }
+
+ 
 }
+
+
 @media only screen and (min-width: 769px) {
+
   .admin_search input {
     width: 400px;
   }
+
   .search_icon {
     display: none;
   }
+  .dashboard_logo .side_menue_icon {
+    display: none;
+  }
+
+
 }

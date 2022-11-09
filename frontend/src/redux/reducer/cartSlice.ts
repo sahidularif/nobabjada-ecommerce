@@ -3,7 +3,7 @@ import { type } from "os";
 import names from "../../data.json";
 
 import { Product } from "../reducer/productSlice";
-type CartItem = Product & {
+export type CartItem = Product & {
   quantity: number;
 };
 type CartState = {
@@ -74,9 +74,15 @@ const cartSlice = createSlice({
 
       state.totalPrice -= priceToBeSubtractedFromTotal;
       localStorage.setItem('cart_total', JSON.stringify(state.totalPrice))
-    }
+    },
+    clearCart(state, action: PayloadAction<{ id?: number; full?: boolean }>) {
+      state.products = [];
+      state.totalPrice = 0;
+      localStorage.setItem("cart_item", JSON.stringify(state.products));
+      localStorage.setItem("cart_total", JSON.stringify(state.totalPrice));
+    },
   },
 });
 
 export default cartSlice.reducer;
-export const { addProductToCart, removeProductFromCart } = cartSlice.actions;
+export const { addProductToCart, removeProductFromCart, clearCart } = cartSlice.actions;

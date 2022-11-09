@@ -1,6 +1,4 @@
 import React from "react";
-import logo from "../../nobabjada-2.png";
-import '../../styles/dashboard.css'
 import { BsFileEarmarkPost } from "react-icons/bs";
 import { MdGridView, MdProductionQuantityLimits, MdSettings } from "react-icons/md";
 import { VscAccount } from "react-icons/vsc";
@@ -8,10 +6,10 @@ import { VscAccount } from "react-icons/vsc";
 const SideMenue = () => {
   return (
     <div className="dashboard_side_menue">
-      <ul className="--">
-        <li className="--">
+      <ul className="">
+        <li className="">
           <a href="/">
-            <MdGridView size={20} /> <span>Dashboard</span>
+            <MdGridView size={20} /> <span>sdsdfsf</span>
           </a>
         </li>
         <li>

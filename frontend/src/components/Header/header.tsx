@@ -13,6 +13,8 @@ import Cart from "../Cart/cart";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { logout } from "../../redux/reducer/authSlices";
 import { VscSearch, VscSearchStop } from "react-icons/vsc";
+import PaymentGateway from "../checkout/checkout";
+import PayButton from "../checkout/payButton";
 
 type PropsType = {
   openModal: boolean;
@@ -84,25 +86,25 @@ const Header = () => {
               )}
             </li>
             <li className="dropdown search dropdown-slide">
-                <a
-                  href="#!"
-                  className="dropdown-toggle"
-                  data-toggle="dropdown"
-                  data-hover="dropdown"
-                  ><i className="tf-ion-ios-search-strong"></i> Search</a
-                >
-                <ul className="dropdown-menu search-dropdown">
-                  <li>
-                    <form action="post">
-                      <input
-                        type="search"
-                        className="form-control"
-                        placeholder="Search..."
-                      />
-                    </form>
-                  </li>
-                </ul>
-              </li>
+              <a
+                href="#!"
+                className="dropdown-toggle"
+                data-toggle="dropdown"
+                data-hover="dropdown"
+              ><i className="tf-ion-ios-search-strong"></i> Search</a
+              >
+              <ul className="dropdown-menu search-dropdown">
+                <li>
+                  <form action="post">
+                    <input
+                      type="search"
+                      className="form-control"
+                      placeholder="Search..."
+                    />
+                  </form>
+                </li>
+              </ul>
+            </li>
             <li>
               {" "}
               <div className="header-icon">
@@ -115,22 +117,28 @@ const Header = () => {
                   <span style={{ color: "#fff" }}>{products.length}</span>
                 </div>
                 {toggleCart && (
-                  <div className="cart">
-                    <div className="cart_close">
+                  <div className="cart shadow">
+                    <div className="cart_close text-dark">
+
                       <MdClose
                         fontSize={50}
-                        className=""
                         onClick={() => setToggleCart(false)}
                       />
+                      
                     </div>
                     <Cart />
-                    {/* <div className="cart_total">
-                      <h5>Subtotal: ${totalPrice} </h5>
-                  </div> */}
                     <div className="checkout">
-                      <button className="button_checkout">
-                        Check out - ${totalPrice}
-                      </button>
+                      {
+                        isAuthenticated ? (
+                          <PayButton />
+                        ) : (
+                          <button className="button_checkout"
+                            onClick={() => navigate('/login')}>
+                            Login to checkout
+                          </button>
+
+                        )
+                      }
                     </div>
                   </div>
                 )}
@@ -186,7 +194,7 @@ const Header = () => {
         open={openModal} 
         onClose={() => setOpenModal(false)} /> */}
       </div>
-      
+
     </header>
   );
 };

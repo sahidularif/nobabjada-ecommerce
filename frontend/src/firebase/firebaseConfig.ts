@@ -6,13 +6,17 @@ import {FacebookAuthProvider, getAuth, GoogleAuthProvider} from "firebase/auth"
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyBb3_ZQ52qTk891x6ItvY2hJTsj73jO-ek",
-  authDomain: "nobabjada.firebaseapp.com",
-  projectId: "nobabjada",
-  storageBucket: "nobabjada.appspot.com",
-  messagingSenderId: "17368413196",
-  appId: "1:17368413196:web:7a4d128b127019b694ea29"
+
+  apiKey: "AIzaSyDqOzlZV8npV3M6rA27yECfNlRiIYctX3s",
+  authDomain: "nobab-3b3c4.firebaseapp.com",
+  projectId: "nobab-3b3c4",
+  storageBucket: "nobab-3b3c4.appspot.com",
+  messagingSenderId: "385105166132",
+  appId: "1:385105166132:web:f4cf163c50fd768fd5af61"
+
 };
+
+
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);

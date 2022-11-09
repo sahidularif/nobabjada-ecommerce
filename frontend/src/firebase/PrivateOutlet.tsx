@@ -11,5 +11,5 @@ export default function PrivateOutlet(){
         value = JSON.parse(user)
     }
 
-    return value.email && value.email !==null? <Outlet/> : <Navigate to="/login" />
+    return user? <Outlet/> : <Navigate to="/login" />
 }

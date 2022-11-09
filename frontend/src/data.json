@@ -1,9 +1,9 @@
 [
   {
     "id": 1,
-    "title": "Amazing smart speaker",
+    "title": "Amazing",
     "price": 50,
-    "description": "Ergonomic executive chair upholstered in bonded black leather and PVC padded seat and back for all-day comfort and support",
+    "description": "Amazing",
     "color": {
       "color_1": "#8da1cd",
       "color_2": "#000",
@@ -14,13 +14,13 @@
       "medium": "M",
       "large": "L"
     },
-    "img_url": "/images/product/pd1.png"
+    "img_url": "/images"
   },
   {
     "id": 2,
-    "title": "Beats solo earphone",
+    "title": "Beats",
     "price": 100,
-    "description": "Ergonomic executive chair upholstered in bonded black leather and PVC padded seat and back for all-day comfort and support",
+    "description": "Beats",
     "color": {
       "color_1": "#800080",
       "color_2": "#FFFF00",
@@ -31,13 +31,13 @@
       "medium": "M",
       "large": "L"
     },
-    "img_url": "/images/product/pd2.png"
+    "img_url": "/images"
   },
   {
     "id": 3,
-    "title": "Smart boys watch",
+    "title": "Apple smart watch",
     "price": 200,
-    "description": "Ergonomic executive chair upholstered in bonded black leather and PVC padded seat and back for all-day comfort and support",
+    "description": "desc",
     "color": {
       "color_1": "#a52a2a",
       "color_2": "#ff7f50",
@@ -54,7 +54,7 @@
     "id": 4,
     "title": "Beats solo headphone",
     "price": 150,
-    "description": "Ergonomic executive chair upholstered in bonded black leather and PVC padded seat and back for all-day comfort and support",
+    "description": "Beats solo headphone",
     "color": {
       "color_1": "#add8e6",
       "color_2": "#da70d6",
@@ -69,9 +69,9 @@
   },
   {
     "id": 5,
-    "title": "Apple smart watch",
+    "title": "Apple mobile speaker pod",
     "price": 300,
-    "description": "Ergonomic executive chair upholstered in bonded black leather and PVC padded seat and back for all-day comfort and support",
+    "description": "Apple mobile speaker pod",
     "color": {
       "color_1": "#8da1cd",
       "color_2": "#000",
@@ -88,7 +88,7 @@
     "id": 6,
     "title": "Amazing virtual oculus",
     "price": 200,
-    "description": "Ergonomic executive chair upholstered in bonded black leather and PVC padded seat and back for all-day comfort and support",
+    "description": "Amazing virtual oculus",
     "color": {
         "color_1": "#a52a2a",
         "color_2": "#ff7f50",
@@ -105,7 +105,7 @@
     "id": 7,
     "title": "4d beats solo headphone",
     "price": 250,
-    "description": "Ergonomic executive chair upholstered in bonded black leather and PVC padded seat and back for all-day comfort and support",
+    "description": "4d beats solo headphone",
     "color": {
       "color_1 ": "#FF6347",
       "color_2": "#2B1B17",
@@ -122,7 +122,7 @@
     "id": 8,
     "title": "Amazing console",
     "price": 100,
-    "description": "Ergonomic executive chair upholstered in bonded black leather and PVC padded seat and back for all-day comfort and support",
+    "description": "Amazing console",
     "color": {
       "color_1": "#E75480",
       "color_2": "#E30B5D",
@@ -139,7 +139,7 @@
     "id": 9,
     "title": "Apple silver watch",
     "price": 100,
-    "description": "Ergonomic executive chair upholstered in bonded black leather and PVC padded seat and back for all-day comfort and support",
+    "description": "Apple silver watch",
     "color": {
       "color_1": "#8da1cd",
       "color_2": "#000",

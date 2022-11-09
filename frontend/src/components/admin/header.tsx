@@ -18,54 +18,9 @@ const Header = () => {
   const handleShow = () => setShow(true);
   return (
     <header className="admin_header">
+
       <div className="dashboard_logo">
-        <div className="mobile_menue">
-          <HiViewGrid color="green" size={30} onClick={handleShow} />
-          <>
-            <Offcanvas show={show} si onHide={handleClose} responsive="sm" style={{'width':'40%'}}>
-              <Offcanvas.Header closeButton className="border">
-                <Offcanvas.Title>
-                  <img src={logo} alt="logo" />
-                </Offcanvas.Title>
-              </Offcanvas.Header>
-              <Offcanvas.Body>
-                <div className="toggle_side_menue">
-                  <ul className="--">
-                    <li className="--">
-                      <a href="/">
-                        <MdGridView size={20} /> <span>Dashboard</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="/">
-                        <VscAccount size={20} /> <span>Account</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="/">
-                        <BsFileEarmarkPost size={20} /> <span>Article</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="/">
-                        {" "}
-                        <MdProductionQuantityLimits size={20} />{" "}
-                        <span>Products</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="/">
-                        {" "}
-                        <MdSettings size={20} />
-                        <span>Settings</span>
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              </Offcanvas.Body>
-            </Offcanvas>
-          </>
-        </div>
+        <HiViewGrid className="side_menue_icon" color="green" size={30} onClick={() => setShow(!show)} />
         <img src={logo} alt="logo" />
         <div className="search_icon">
           <MdSearch />
@@ -89,6 +44,45 @@ const Header = () => {
           <FaCaretDown color="black" />
         </div>
       </div>
+      <Offcanvas show={show} onHide={handleClose} style={{ 'width': '40%' }}>
+        <Offcanvas.Header closeButton>
+          <Offcanvas.Title>NOBABJADA</Offcanvas.Title>
+        </Offcanvas.Header>
+        <Offcanvas.Body>
+          <div className="toggle_side_menue">
+            <ul className="">
+              <li className="">
+                <a href="/">
+                  <MdGridView size={20} /> <span>Dashboard</span>
+                </a>
+              </li>
+              <li>
+                <a href="/">
+                  <VscAccount size={20} /> <span>Account</span>
+                </a>
+              </li>
+              <li>
+                <a href="/">
+                  <BsFileEarmarkPost size={20} /> <span>Article</span>
+                </a>
+              </li>
+              <li>
+                <a href="/">
+                  {" "}
+                  <MdProductionQuantityLimits size={20} /> <span>Products</span>
+                </a>
+              </li>
+              <li>
+                <a href="/">
+                  {" "}
+                  <MdSettings size={20} />
+                  <span>Settings</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </Offcanvas.Body>
+      </Offcanvas>
     </header>
   );
 };

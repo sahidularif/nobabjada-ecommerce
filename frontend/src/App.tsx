@@ -15,6 +15,10 @@ import PrivateOutlet from "./firebase/PrivateOutlet";
 import { useDispatch } from "react-redux";
 import Register from "./components/pages/register";
 import Forgetpassword from "./components/pages/forgetPassword";
+import CheckOut from "./components/checkout/checkout";
+import Order from "./components/admin/order";
+import Checkout from "./components/pages/checkout";
+import CheckoutSuccess from "./CheckoutSuccess";
 
 function App() {
   const [openModal, setOpenModal] = React.useState(false);
@@ -47,9 +51,13 @@ function App() {
           <Route path="products" element={<Admin chield={<Products />} />} />
           <Route path="product" element={<Admin chield={<Product />} />} />
           <Route path="articles" element={<Admin chield={<Article />} />} />
+          <Route path="/checkout-success" element={<CheckoutSuccess/>} />
+          <Route path="/checkout" element={<Checkout/>} />
+          <Route path="/order" element={<Order/>} />
           <Route path="/dashboard" element={<PrivateOutlet />}>
             <Route path="admin" element={<Details />} />
             <Route path="products" element={<Admin chield={<Products />} />} />
+            <Route path="order" element={<Admin chield={<Order />} />} />
           </Route>
         </Routes>
       </BrowserRouter>
