@@ -19,9 +19,12 @@ import CheckOut from "./components/checkout/checkout";
 import Order from "./components/admin/order";
 import Checkout from "./components/pages/checkout";
 import CheckoutSuccess from "./CheckoutSuccess";
+import { useAppSelector } from "./redux/hooks/useTypeSelector";
 
 function App() {
   const [openModal, setOpenModal] = React.useState(false);
+  const {isAuthenticated} = useAppSelector(state=>state.auth)
+  console.log(isAuthenticated)
   const dispatch = useDispatch();
   // console.log(user)
   React.useEffect(() => {

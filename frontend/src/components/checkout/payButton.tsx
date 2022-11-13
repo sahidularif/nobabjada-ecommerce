@@ -5,8 +5,8 @@ import { clearCart } from "../../redux/reducer/cartSlice";
 // import { clearCart } from "../../redux/reducer/cartSlice";
 
 const PayButton = () => {
-  const {user} = useAppSelector((state) => state.auth);
-  const {products} = useAppSelector((state) => state.cart);
+  const { user } = useAppSelector((state) => state.auth);
+  const { products } = useAppSelector((state) => state.cart);
   const dispatch = useAppDispatch()
   const handleCheckout = () => {
     console.log(products)

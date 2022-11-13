@@ -17,20 +17,24 @@ const register = async (newUser: NewUser): Promise<DisplayUser | null> => {
 
   return response.data;
 };
+
+
 // User Login
 const login = async (user: LoginUser): Promise<{ jwt: Jwt; user: DisplayUser | null }> => {
   const response = await axios.post(API_URL + "login", user);
 
   if (response.data) {
-    localStorage.setItem('jwt', JSON.stringify(response.data.data.token));
+    localStorage.setItem('jwt', JSON.stringify(response.data.token));
     // console.log(response.data)
-    const decodedJwt: DecodedJwt = jwt_decode(response.data.data.token);
+    const decodedJwt: DecodedJwt = jwt_decode(response.data.token);
     // console.log(decodedJwt)
     localStorage.setItem('user', JSON.stringify(decodedJwt.user));
-    return { jwt: response.data.data.token, user: decodedJwt.user };
+    return { jwt: response.data.token, user: decodedJwt.user };
   }
-  return { jwt: response.data.data, user: null };
+  return { jwt: response.data, user: null };
 };
+
+
 // Google signin
 const googleLogin = async (): Promise<{ jwt: Jwt; user: DisplayUser | null }> => {
   try {
@@ -46,23 +50,28 @@ const googleLogin = async (): Promise<{ jwt: Jwt; user: DisplayUser | null }> =>
       id: res.user.uid,
       email: res.user.email,
       name: res.user.displayName,
+      isAdmin: false,
     }
     localStorage.setItem('jwt', JSON.stringify(token))
     localStorage.setItem('user', JSON.stringify(user))
     return {
       jwt: token,
-      user: user
+      user: user,
     }
 
   } catch (error) {
     return { jwt: null, user: null }
   }
 };
+
+
 // User Logout
 const logout = (): void => {
   localStorage.removeItem('user');
   localStorage.removeItem('jwt');
 };
+
+
 // Jwt Verification
 const verifyJwt = async (jwt: string): Promise<boolean> => {
   const response = await axios.post(
@@ -72,6 +81,10 @@ const verifyJwt = async (jwt: string): Promise<boolean> => {
 
   if (response.data) {
     const jwtExpirationMs = response.data.exp * 1000;
+    if(jwtExpirationMs < Date.now()){
+      localStorage.removeItem('jwt')
+      localStorage.removeItem('user')
+    }
     return jwtExpirationMs > Date.now();
   }
 

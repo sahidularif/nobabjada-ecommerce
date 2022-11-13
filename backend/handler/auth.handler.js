@@ -1,6 +1,7 @@
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
 const User = require("../models/User");
+require('dotenv').config();
 const authHandler = {};
 
 authHandler.defaultRoot = (req, res, next) => {
@@ -17,6 +18,7 @@ authHandler.register = async (req, res, next) => {
         email: req.body.email,
         password: hashedPassword,
       });
+
 
       // save the new user
       newUser
@@ -46,6 +48,7 @@ authHandler.register = async (req, res, next) => {
     });
 };
 
+
 // User Login & Jwt token
 authHandler.login = (req, res, next) => {
   User.findOne({ email: req.body.email })
@@ -74,18 +77,17 @@ authHandler.login = (req, res, next) => {
                 id: data._id,
                 name: data.name,
                 email: data.email,
+                isAdmin: data.isAdmin,
               },
             },
-            "RANDOM-TOKEN",
+            `${process.env.JWT_SECRET_KEY}`,
             { expiresIn: "1h" }
           );
 
           //   return success response
           res.status(200).send({
             message: "Login Successful",
-            data: {
-              token,
-            },
+            token,
           });
         })
         // catch error if password do not match
@@ -106,4 +108,12 @@ authHandler.login = (req, res, next) => {
     });
 };
 
+authHandler.verifyToken = (req, res, next) => {
+  const token = req.body.jwt;
+  if (token == null) return res.sendStatus(401);
+  jwt.verify(token, process.env.JWT_SECRET_KEY, (err, decoded) => {
+    if (err) return res.status(403).send("Invalid auth token...");
+    res.status(200).json({ decoded });
+  })
+}
 module.exports = authHandler;

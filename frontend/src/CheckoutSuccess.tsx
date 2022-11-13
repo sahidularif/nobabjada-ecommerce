@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 const CheckoutSuccess = () => {
@@ -12,6 +13,7 @@ const CheckoutSuccess = () => {
         Incase of any inqueries contact the support at{" "}
         <strong>support@onlineshop.com</strong>
       </p>
+      <Link to="/">Go to home</Link>
     </Container>
   );
 };

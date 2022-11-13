@@ -3,7 +3,8 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const port = 5000
 const stripe = require('./routes/stripe');
-const {routes } = require('./routes/auth.routes')
+const {routes } = require('./routes/auth.routes');
+const { productRoute } = require('./routes/services');
 require('dotenv').config();
 const app = express();
 app.use(bodyParser.json());
@@ -16,6 +17,7 @@ require('./database')();
 
 app.use('/auth', routes);
 app.use('/stripe', stripe);
+app.use('/product', productRoute);
 
 app.get("/", (req, res) => {
     res.send({ message: "Welcome" })
